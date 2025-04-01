@@ -99,15 +99,7 @@ int sent_header(rio_t *rio, char *buf, URL *myurl){
         if(strstr(read_buf, "Host:")){
             flag = 1;
         }
-        if(strstr(read_buf, "Connection:")){
-            continue;
-        }
-        if(strstr(read_buf, "Proxy-Connection:")){
-            continue;
-        }
-        if(strstr(read_buf, "User-Agent:")){
-            continue;
-        }
+
         sprintf(buf, "%s%s", buf, read_buf);
     }
     if(!flag){
